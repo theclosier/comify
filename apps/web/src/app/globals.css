@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+@theme {
+  /* COMINFY CLEAN PASTEL PALETTE */
+  /* Purpose: Modern, fresh, and friendly but professional */
+
+  /* Backgrounds */
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f8fafc;
+  /* slate-50 */
+  --color-surface-active: #f1f5f9;
+  /* slate-100 */
+
+  /* Pastel Accents - Subtle & Classy */
+  --color-pastel-blue: #eef2ff;
+  /* indigo-50 */
+  --color-pastel-blue-dark: #c7d2fe;
+  /* indigo-200 */
+  --color-pastel-green: #f0fdf4;
+  /* emerald-50 */
+  --color-pastel-green-dark: #bbf7d0;
+  /* emerald-200 */
+  --color-pastel-purple: #faf5ff;
+  /* purple-50 */
+  --color-pastel-purple-dark: #e9d5ff;
+  /* purple-200 */
+  --color-pastel-orange: #fff7ed;
+  /* orange-50 */
+  --color-pastel-orange-dark: #fed7aa;
+  /* orange-200 */
+
+  /* Primary Action */
+  --color-primary: #1e293b;
+  /* slate-800 - Soft Black */
+  --color-primary-hover: #0f172a;
+  /* slate-900 */
+  --color-primary-foreground: #ffffff;
+
+  /* Secondary Action */
+  --color-accent: #6366f1;
+  /* indigo-500 */
+
+  /* Text Colors */
+  --color-text-main: #0f172a;
+  /* slate-900 */
+  --color-text-muted: #64748b;
+  /* slate-500 */
+  --color-text-subtle: #94a3b8;
+  /* slate-400 */
+
+  /* Borders */
+  --color-border: #e2e8f0;
+  /* slate-200 */
+  --color-border-subtle: #f1f5f9;
+  /* slate-100 */
+  --color-border-active: #cbd5e1;
+  /* slate-300 */
+
+  /* Animations */
+  --animate-fade-in: fadeIn 400ms ease-out forwards;
+  --animate-slide-up: slideUp 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.015em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+    color: var(--color-text-main);
+  }
+}
+
+@layer components {
+
+  /* PASTEL CARD */
+  .cominfy-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cominfy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
+    /* Soft elevated shadow */
+    border-color: var(--color-border-active);
+  }
+
+  /* INPUTS */
+  .cominfy-input {
+    @apply w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-text-main outline-none transition-all duration-200;
+  }
+
+  .cominfy-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px var(--color-pastel-blue);
+  }
+
+  .cominfy-input::placeholder {
+    color: var(--color-text-subtle);
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    @apply bg-primary text-white text-sm font-semibold px-6 py-3 rounded-xl transition-all duration-200 flex items-center justify-center gap-2;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  }
+
+  .btn-primary:hover {
+    @apply bg-primary-hover;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-border text-text-main text-sm font-semibold px-6 py-3 rounded-xl transition-all duration-200 flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-surface-hover border-border-active;
+    transform: translateY(-1px);
+  }
+
+  /* SIDEBAR LINKS */
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-text-muted transition-all duration-200;
+  }
+
+  .sidebar-link:hover {
+    @apply bg-pastel-blue text-accent;
+  }
+
+  .sidebar-link.active {
+    @apply bg-pastel-blue text-accent font-bold;
+  }
+}
+
+/* Utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  opacity: 0;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.zoom-in {
+  animation-name: zoomIn;
+}
+
+.slide-up,
+.slide-in-from-bottom-2 {
+  animation-name: slideUp;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

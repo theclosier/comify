@@ -1,0 +1,115 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  role         UserRole @default(EVENT_ADMIN)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  registrations Registration[]
+}
+
+model Event {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  startDate   DateTime
+  endDate     DateTime?
+  timezone    String   @default("Europe/Istanbul")
+  location    String?
+  
+  totalCapacity Int         @default(0)
+  status        EventStatus @default(DRAFT)
+  visibility    String      @default("PUBLIC") 
+
+  ticketName  String?  @default("Genel Giriş")
+  ticketPrice Decimal? @default(0)
+
+  platformIds   Json?       @default("{}")
+  platformData  Json?
+  platformStatus Json?
+  
+  registrations Registration[]
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Registration {
+  id                     String             @id @default(uuid())
+  eventId                String
+  event                  Event              @relation(fields: [eventId], references: [id])
+  
+  userId                 String?
+  user                   User?              @relation(fields: [userId], references: [id])
+
+  guestName              String
+  guestEmail             String
+  
+  sourcePlatform         Platform
+  platformRegistrationId String?
+  
+  status                 RegistrationStatus @default(PENDING)
+  paymentStatus          PaymentStatus      @default(PENDING)
+  paymentMethod          String?
+  paymentAmount          Decimal?
+  
+  checkedInAt            DateTime?
+
+  createdAt              DateTime           @default(now())
+  updatedAt              DateTime           @updatedAt
+
+  @@unique([eventId, guestEmail])
+}
+
+model Integration {
+  id           String   @id @default(uuid())
+  platform     Platform @unique
+  accessToken  String
+  refreshToken String?
+  settings     Json?
+  updatedAt    DateTime @updatedAt
+}
+
+enum UserRole {
+  SUPER_ADMIN
+  FINANCE_ADMIN
+  EVENT_ADMIN
+}
+
+enum Platform {
+  MEETUP
+  EVENTBRITE
+  LUMA
+  INTERNAL
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  CANCELLED
+}
+
+enum RegistrationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  WAITLISTED
+  CHECKED_IN
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  REFUNDED
+  FAILED
+}
