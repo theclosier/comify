@@ -20,10 +20,7 @@ export default async function CommunityGalleryPage({ params }: { params: Promise
     return (
         <div className="min-h-screen bg-stone-50/50 font-sans pb-24">
             <div className="max-w-6xl mx-auto px-6 py-8 animate-in fade-in slide-in-from-bottom-2 duration-500">
-                <Link href={`/c/${subdomain}`} className="inline-flex items-center gap-2 text-stone-500 hover:text-stone-900 transition-colors text-sm font-medium mb-6">
-                    <ChevronLeft className="w-4 h-4" />
-                    Topluluğa Dön
-                </Link>
+
 
                 <div className="flex items-center gap-4 mb-8">
                     <div className="bg-purple-50 p-3 rounded-2xl text-purple-600">
