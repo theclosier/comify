@@ -8,13 +8,14 @@ export default async function CommunityLayout({
     params,
 }: {
     children: React.ReactNode;
-    params: { subdomain: string };
+    params: Promise<{ subdomain: string }>;
 }) {
+    const { subdomain } = await params;
     const supabase = await createClient();
     const { data: community } = await supabase
         .from('communities')
         .select('name, subdomain')
-        .eq('subdomain', params.subdomain)
+        .eq('subdomain', subdomain)
         .single();
 
     // Since this is a layout, we might not want to block everything if fetch fails, 
