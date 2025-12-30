@@ -62,11 +62,11 @@ export default function LandingPage() {
                     {/* Hero Visual Mockup */}
                     <div className="pt-16 px-4">
                         <div className="relative rounded-2xl border border-indigo-100 shadow-2xl shadow-indigo-100 bg-white p-2 max-w-5xl mx-auto transform hover:scale-[1.01] transition-transform duration-500">
-                            <div className="rounded-xl overflow-hidden bg-surface-hover aspect-[16/9] flex items-center justify-center border border-indigo-50 relative group cursor-pointer">
+                            <div className="rounded-xl overflow-hidden bg-surface-hover border border-indigo-50 relative group cursor-pointer">
                                 <img
                                     src="/assets/dashboard-preview.png"
                                     alt="Cominfy Dashboard Interface"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-auto"
                                 />
                             </div>
                         </div>
