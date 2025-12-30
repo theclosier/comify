@@ -17,8 +17,10 @@ export default function CommunityHeader({ community }: CommunityHeaderProps) {
     const [user, setUser] = useState<any>(null);
 
     useEffect(() => {
+        const supabase = createClient();
+
+        // Initial check
         const checkUser = async () => {
-            const supabase = createClient();
             const { data: { user } } = await supabase.auth.getUser();
             if (user) {
                 setIsLoggedIn(true);
@@ -26,6 +28,21 @@ export default function CommunityHeader({ community }: CommunityHeaderProps) {
             }
         };
         checkUser();
+
+        // Real-time subscription to auth changes
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+            if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+                setIsLoggedIn(true);
+                setUser(session?.user || null);
+            } else if (event === 'SIGNED_OUT') {
+                setIsLoggedIn(false);
+                setUser(null);
+            }
+        });
+
+        return () => {
+            subscription.unsubscribe();
+        };
     }, []);
 
     return (
