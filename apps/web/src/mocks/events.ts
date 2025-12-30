@@ -28,6 +28,7 @@ export const MOCK_EVENTS: Event[] = [
     },
     {
         id: 'e2',
+        communityId: 'c1',
         title: 'React 19 Yenilikleri',
         description: 'React ekosistemindeki son gelişmeler.',
         startDate: '2026-06-20T19:00:00',
