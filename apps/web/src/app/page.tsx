@@ -54,7 +54,7 @@ export default function LandingPage() {
                             Ücretsiz Dene
                             <ArrowRight className="w-5 h-5 ml-2" />
                         </Link>
-                        <button className="btn-secondary py-4 px-8 text-lg bg-white/80 hover:bg-white">
+                        <button className="py-4 px-8 text-lg font-bold rounded-full border border-indigo-200 text-indigo-700 bg-white/80 hover:bg-white hover:shadow-sm transition-all flex items-center gap-2">
                             Canlı Demoyu İzle
                         </button>
                     </div>
@@ -248,7 +248,7 @@ export default function LandingPage() {
                                 <span className="text-4xl font-extrabold text-text-main">₺0</span>
                                 <span className="text-text-muted">/ay</span>
                             </div>
-                            <Link href="/register" className="btn-secondary w-full justify-center mb-8">Ücretsiz Başla</Link>
+                            <Link href="/register" className="w-full justify-center mb-8 py-3.5 px-6 rounded-full border border-indigo-200 text-indigo-700 font-bold hover:bg-indigo-50 transition-all flex items-center gap-2">Ücretsiz Başla</Link>
                             <ul className="space-y-3 text-sm">
                                 <li className="flex items-center gap-3 text-text-main"><Check className="w-4 h-4 text-emerald-500 flex-shrink-0" /> 100 Üye Limiti</li>
                                 <li className="flex items-center gap-3 text-text-main"><Check className="w-4 h-4 text-emerald-500 flex-shrink-0" /> 1 Platform Senkronizasyonu</li>
@@ -287,7 +287,7 @@ export default function LandingPage() {
                             <div className="mb-6">
                                 <span className="text-4xl font-extrabold text-text-main">Özel</span>
                             </div>
-                            <Link href="mailto:hello@cominfy.com" className="btn-secondary w-full justify-center mb-8">İletişime Geç</Link>
+                            <Link href="mailto:hello@cominfy.com" className="w-full justify-center mb-8 py-3.5 px-6 rounded-full border border-indigo-200 text-indigo-700 font-bold hover:bg-indigo-50 transition-all flex items-center gap-2">İletişime Geç</Link>
                             <ul className="space-y-3 text-sm">
                                 <li className="flex items-center gap-3 text-text-main"><Check className="w-4 h-4 text-emerald-500 flex-shrink-0" /> Sınırsız Üye</li>
                                 <li className="flex items-center gap-3 text-text-main"><Check className="w-4 h-4 text-emerald-500 flex-shrink-0" /> Özel API Erişimi</li>
