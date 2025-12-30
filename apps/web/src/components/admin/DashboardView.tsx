@@ -52,7 +52,7 @@ export default function DashboardView({ stats, recentEvents, pendingMembersList:
                 <div className="flex justify-between items-end">
                     <div>
                         <h2 className="text-taupe font-bold uppercase tracking-widest text-xs mb-2">Hoş Geldin, Yönetici 👋</h2>
-                        <h1 className="text-4xl md:text-5xl font-serif text-obsidian tracking-tight">Genel Bakış</h1>
+                        <h1 className="text-3xl md:text-4xl font-serif text-obsidian tracking-tight">Genel Bakış</h1>
                     </div>
                     <div className="flex gap-3">
                         <Link
@@ -107,7 +107,7 @@ export default function DashboardView({ stats, recentEvents, pendingMembersList:
                     {/* Recent Events */}
                     <div>
                         <div className="flex justify-between items-center mb-6 px-1">
-                            <h3 className="text-2xl font-serif text-obsidian">Son Etkinlikler</h3>
+                            <h3 className="text-xl font-serif text-obsidian">Son Etkinlikler</h3>
                             <Link href="/yntm/events" className="text-xs text-electric-blue font-bold uppercase tracking-widest flex items-center gap-1 hover:underline">
                                 Tümünü Gör <ArrowRight className="w-4 h-4 ml-0.5" />
                             </Link>
@@ -146,7 +146,7 @@ export default function DashboardView({ stats, recentEvents, pendingMembersList:
                     {/* Pending Members Approvals */}
                     <div>
                         <div className="flex justify-between items-center mb-6 px-1">
-                            <h3 className="text-2xl font-serif text-obsidian">
+                            <h3 className="text-xl font-serif text-obsidian">
                                 Üyelik Başvuruları
                                 <span className="ml-3 bg-gold/10 text-gold text-xs px-2.5 py-1 rounded-full border border-gold/20 align-middle">{pendingMembers.length}</span>
                             </h3>
