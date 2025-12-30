@@ -104,11 +104,7 @@ export default function EventsView({ community, events }: EventsViewProps) {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
 
-                                    <div className="absolute top-4 left-4">
-                                        <span className="bg-electric-blue/90 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-sm border border-white/20">
-                                            {event.platform || 'Canlı'}
-                                        </span>
-                                    </div>
+
                                 </div>
 
                                 {/* Content Area */}

@@ -32,7 +32,7 @@ export default async function CommunityLayout({
                 {children}
             </div>
 
-            <footer className="py-8 bg-cream-200 border-t border-sandstone text-center mt-auto">
+            <footer className="py-8 bg-transparent border-t border-sandstone text-center mt-auto">
                 <Link
                     href="/"
                     className="inline-flex items-center gap-2 text-stone-400 hover:text-indigo-600 transition-colors text-xs font-bold tracking-widest uppercase opacity-60 hover:opacity-100"
