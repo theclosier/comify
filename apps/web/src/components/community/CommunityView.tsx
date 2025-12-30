@@ -47,7 +47,7 @@ export default function CommunityView({ community, events }: CommunityViewProps)
     });
 
     return (
-    return (
+
         <div className="min-h-screen pb-24 pt-32 px-4 md:px-8 bg-cream-100">
             <div className="max-w-7xl mx-auto space-y-8">
 
