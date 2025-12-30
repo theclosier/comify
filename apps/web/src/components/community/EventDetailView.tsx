@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 import { createClient } from "@/utils/supabase/client";
 
 import { Calendar, MapPin, Ticket, ChevronLeft, Heart, Share2, Globe, Twitter, Instagram, Linkedin, Star, LogIn } from "lucide-react";
