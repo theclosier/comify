@@ -206,9 +206,7 @@ export default function CommunityView({ community, events }: CommunityViewProps)
                             Fotoğrafları Gör <ArrowRight className="w-3 h-3" />
                         </Link>
                     </div>
-
                 </div>
-
                 {/* RIGHT COL: EVENTS STREAM - 8 cols */}
                 <div className="lg:col-span-8 animate-in slide-up duration-700 delay-200">
                     <div className="flex items-center justify-between mb-6">
