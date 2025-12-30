@@ -62,7 +62,7 @@ export default function LandingPage() {
                     {/* Hero Visual Mockup */}
                     <div className="pt-16 px-4">
                         <div className="relative rounded-2xl border border-indigo-100 shadow-2xl shadow-indigo-100 bg-white p-2 max-w-5xl mx-auto transform hover:scale-[1.01] transition-transform duration-500">
-                            <div className="rounded-xl overflow-hidden bg-surface-hover aspect-[16/9] flex items-center justify-center border border-border-subtle">
+                            <div className="rounded-xl overflow-hidden bg-surface-hover aspect-[16/9] flex items-center justify-center border border-indigo-50">
                                 <div className="text-center space-y-4 opacity-50">
                                     <Layout className="w-16 h-16 mx-auto text-indigo-300" />
                                     <p className="font-semibold text-text-muted">Panel Arayüzü Önizleme</p>
@@ -102,7 +102,7 @@ export default function LandingPage() {
                         <div className="order-2 lg:order-1 relative">
                             <div className="absolute inset-0 bg-pastel-purple rounded-full blur-3xl opacity-60 transform -translate-x-10"></div>
                             <div className="relative rounded-2xl border border-indigo-100 shadow-lg bg-white p-8 space-y-6">
-                                <div className="flex items-center gap-4 p-4 rounded-xl bg-surface-hover border border-border-subtle">
+                                <div className="flex items-center gap-4 p-4 rounded-xl bg-surface-hover border border-indigo-50">
                                     <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm text-indigo-600"><Zap className="w-6 h-6" /></div>
                                     <div>
                                         <h4 className="font-bold text-text-main">Etkinlik Eşlendi</h4>
@@ -110,7 +110,7 @@ export default function LandingPage() {
                                     </div>
                                     <div className="ml-auto text-emerald-500"><Check className="w-5 h-5" /></div>
                                 </div>
-                                <div className="flex items-center gap-4 p-4 rounded-xl bg-surface-hover border border-border-subtle opacity-70">
+                                <div className="flex items-center gap-4 p-4 rounded-xl bg-surface-hover border border-indigo-50 opacity-70">
                                     <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm text-indigo-600"><Users className="w-6 h-6" /></div>
                                     <div>
                                         <h4 className="font-bold text-text-main">Katılımcılar Güncellendi</h4>
@@ -368,7 +368,7 @@ export default function LandingPage() {
                         </div>
                     </div>
 
-                    <div className="border-t border-border-subtle pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-text-muted">
+                    <div className="border-t border-indigo-50 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-text-muted">
                         <p>© 2025 Cominfy Inc. Tüm hakları saklıdır.</p>
                         <div className="flex gap-6 mt-4 md:mt-0">
                             <a href="#" className="hover:text-text-main">Gizlilik Politikası</a>
