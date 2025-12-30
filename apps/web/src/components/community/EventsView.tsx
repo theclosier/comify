@@ -43,8 +43,8 @@ export default function EventsView({ community, events }: EventsViewProps) {
                 {/* --- HEADER & FILTERS --- */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                     <div>
-                        <h1 className="text-4xl md:text-5xl font-serif text-obsidian tracking-tight">Etkinlikler</h1>
-                        <p className="text-charcoal mt-2 text-lg font-light">
+                        <h1 className="text-3xl md:text-4xl font-serif text-obsidian tracking-tight">Etkinlikler</h1>
+                        <p className="text-charcoal mt-2 text-sm font-light">
                             {community.name} topluluğunun güncel etkinlikleri.
                         </p>
                     </div>
@@ -98,7 +98,7 @@ export default function EventsView({ community, events }: EventsViewProps) {
                                 {/* Image Area */}
                                 <div className="relative h-64 overflow-hidden">
                                     <img
-                                        src={event.cover_image || community.cover_image || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop"}
+                                        src={event.cover_image || community.cover_image || "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=1000&auto=format&fit=crop"}
                                         alt={event.title}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                     />

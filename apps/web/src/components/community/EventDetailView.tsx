@@ -50,11 +50,11 @@ export default function EventDetailView({ event, community }: EventDetailViewPro
 
                         {/* Porcelain Window: Image */}
                         <div className="relative aspect-video rounded-[32px] overflow-hidden shadow-warm border border-sandstone group">
-                            {event.image ? (
-                                <img src={event.image} alt={event.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-                            ) : (
-                                <div className="w-full h-full bg-cream-200 flex items-center justify-center text-taupe">Görsel Yok</div>
-                            )}
+                            <img
+                                src={event.image || event.cover_image || "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=1000&auto=format&fit=crop"}
+                                alt={event.title}
+                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
                             {/* Floating Badge */}
