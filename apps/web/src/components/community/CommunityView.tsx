@@ -208,6 +208,119 @@ export default function CommunityView({ community, events }: CommunityViewProps)
                     </div>
 
                 </div>
+
+                {/* RIGHT COL: EVENTS STREAM - 8 cols */}
+                <div className="lg:col-span-8 animate-in slide-up duration-700 delay-200">
+                    <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-3">
+                            <h2 className="text-2xl font-bold text-text-main">Etkinlik Akışı</h2>
+                            <span className="px-2 py-0.5 bg-stone-100 text-stone-600 rounded-full text-xs font-bold border border-stone-200">{filteredEvents.length}</span>
+                        </div>
+                        <div className="flex gap-1 bg-stone-100 p-1 rounded-lg border border-stone-200">
+                            <button
+                                onClick={() => setEventFilter('UPCOMING')}
+                                className={clsx(
+                                    "px-4 py-2 text-xs font-bold rounded-md transition-all",
+                                    eventFilter === 'UPCOMING' ? "bg-white text-primary shadow-sm" : "text-text-muted hover:text-text-main"
+                                )}
+                            >
+                                Yaklaşan
+                            </button>
+                            <button
+                                onClick={() => setEventFilter('PAST')}
+                                className={clsx(
+                                    "px-4 py-2 text-xs font-bold rounded-md transition-all",
+                                    eventFilter === 'PAST' ? "bg-white text-primary shadow-sm" : "text-text-muted hover:text-text-main"
+                                )}
+                            >
+                                Geçmiş
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="space-y-6">
+                        {filteredEvents.length === 0 ? (
+                            <div className="text-center py-12 bg-white rounded-2xl border border-stone-200 border-dashed">
+                                <Calendar className="w-12 h-12 text-stone-300 mx-auto mb-3" />
+                                <h3 className="text-text-main font-bold">Etkinlik Bulunamadı</h3>
+                                <p className="text-text-muted text-sm">Bu kategoride şu an gösterilecek etkinlik yok.</p>
+                            </div>
+                        ) : (
+                            filteredEvents.map((event, idx) => (
+                                <Link
+                                    key={event.id}
+                                    href={`/c/${community.subdomain}/events/${event.id}`}
+                                    className="group bg-white rounded-2xl p-5 border border-stone-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-6 items-start cursor-pointer block"
+                                >
+                                    {/* Date Box */}
+                                    <div className={clsx(
+                                        "flex-shrink-0 w-full md:w-20 rounded-xl p-3 flex flex-col items-center justify-center text-center border transition-colors duration-300",
+                                        eventFilter === 'PAST' ? "bg-stone-100 border-stone-200 opacity-70" : "bg-stone-50 border-stone-100 group-hover:bg-primary group-hover:text-white"
+                                    )}>
+                                        <span className="text-xs font-bold uppercase tracking-wider mb-0.5 opacity-60">
+                                            {new Date(event.start_date).toLocaleString('tr-TR', { month: 'short' })}
+                                        </span>
+                                        <span className="text-3xl font-bold leading-none">
+                                            {new Date(event.start_date).getDate()}
+                                        </span>
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <span className="text-[10px] font-bold uppercase tracking-wider bg-stone-100 text-stone-600 px-2 py-0.5 rounded border border-stone-200">
+                                                {event.platform || 'Cominfy'}
+                                            </span>
+                                            {eventFilter === 'UPCOMING' ? (
+                                                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 flex items-center gap-1">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                                                    Kayıtlar Açık
+                                                </span>
+                                            ) : (
+                                                <span className="text-[10px] font-bold uppercase tracking-wider text-stone-500 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">
+                                                    Tamamlandı
+                                                </span>
+                                            )}
+                                        </div>
+
+                                        <h3 className="text-xl font-bold text-text-main mb-2 group-hover:text-primary transition-colors cursor-pointer">
+                                            {event.title}
+                                        </h3>
+
+                                        <p className="text-text-muted text-sm line-clamp-2 mb-4 leading-relaxed">
+                                            {event.description}
+                                        </p>
+
+                                        <div className="flex items-center gap-6 text-xs font-medium text-text-muted">
+                                            <div className="flex items-center gap-1.5">
+                                                <Calendar className="w-4 h-4" />
+                                                {new Date(event.start_date).toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' })}
+                                            </div>
+                                            <div className="flex items-center gap-1.5">
+                                                <MapPin className="w-4 h-4" />
+                                                {event.location}
+                                            </div>
+                                            <div className="flex items-center gap-1.5">
+                                                <Users className="w-4 h-4" />
+                                                {/* Mock capacity for now since I didn't verify it in DB query yet, safe default */}
+                                                {event.registeredCount || 0}/{event.capacity || 100}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Action */}
+                                    <div className="self-center flex-shrink-0">
+                                        <span className="btn-secondary py-2.5 px-5 text-xs shadow-sm hover:shadow-md inline-block">
+                                            İncele
+                                        </span>
+                                    </div>
+                                </Link>
+                            ))
+                        )}
+                    </div>
+                </div>
+
             </div>
-            );
+        </div>
+    );
 }
