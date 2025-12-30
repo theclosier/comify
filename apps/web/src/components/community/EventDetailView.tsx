@@ -2,18 +2,9 @@
 
 import { createClient } from "@/utils/supabase/client";
 
-useEffect(() => {
-    const checkAuth = async () => {
-        const supabase = createClient();
-        const { data: { user } } = await supabase.auth.getUser();
-        setIsLoggedIn(!!user);
-    };
-    checkAuth();
-}, []);
 import { Calendar, MapPin, Ticket, ChevronLeft, Heart, Share2, Globe, Twitter, Instagram, Linkedin, Star, LogIn } from "lucide-react";
 import Link from "next/link";
 import clsx from "clsx";
-import { createClient } from "@/utils/supabase/client";
 
 interface EventDetailViewProps {
     event: any;
