@@ -74,7 +74,7 @@ export default function DashboardView({ stats, recentEvents, pendingMembersList:
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-in slide-in-from-bottom-2 delay-200 duration-700 fill-mode-both">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <StatsCard
                         title="Toplam Üye"
                         value={stats.totalMembers.toString()}
@@ -103,7 +103,7 @@ export default function DashboardView({ stats, recentEvents, pendingMembersList:
                     />
                 </div>
 
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 animate-in slide-in-from-bottom-2 delay-300 duration-700 fill-mode-both">
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
                     {/* Recent Events */}
                     <div>
                         <div className="flex justify-between items-center mb-6 px-1">

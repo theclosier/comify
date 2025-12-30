@@ -183,21 +183,21 @@ export default function CommunityView({ community, events }: CommunityViewProps)
                                     </div>
 
                                     {/* Event Info Card - Increased Padding */}
-                                    <div className="absolute bottom-4 left-4 right-4 p-5 porcelain-glass rounded-[20px] flex flex-col gap-2 group-hover:-translate-y-1 transition-transform duration-300 shadow-lg backdrop-blur-xl">
+                                    <div className="absolute bottom-5 left-5 right-5 p-5 porcelain-glass rounded-[24px] flex flex-col gap-2 group-hover:-translate-y-1 transition-transform duration-300 shadow-lg backdrop-blur-xl">
                                         <div className="flex justify-between items-start">
-                                            <span className="bg-electric-blue text-white text-[9px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wide shadow-sm">
+                                            <span className="bg-electric-blue text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wide shadow-sm">
                                                 {new Date(event.start_date).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long' })}
                                             </span>
-                                            <span className="text-obsidian bg-white/70 px-2 py-0.5 rounded-md text-[9px] font-bold border border-white/50">
+                                            <span className="text-obsidian bg-white/70 px-2.5 py-1 rounded-lg text-[10px] font-bold border border-white/50">
                                                 {event.platform || 'Canlı'}
                                             </span>
                                         </div>
-                                        <h3 className={clsx("font-serif text-obsidian leading-snug line-clamp-2", idx === 0 ? "text-xl" : "text-lg")}>
+                                        <h3 className={clsx("font-serif text-obsidian leading-snug line-clamp-2 mt-1", idx === 0 ? "text-2xl" : "text-xl")}>
                                             {event.title}
                                         </h3>
-                                        <div className="flex items-center gap-3 text-[10px] font-bold text-taupe pt-1 uppercase tracking-wide">
-                                            <div className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {new Date(event.start_date).toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' })}</div>
-                                            <div className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {event.location || 'Online'}</div>
+                                        <div className="flex items-center gap-4 text-xs font-bold text-taupe pt-1 uppercase tracking-wide">
+                                            <div className="flex items-center gap-1.5"><Calendar className="w-4 h-4 text-taupe" /> {new Date(event.start_date).toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' })}</div>
+                                            <div className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-taupe" /> {event.location || 'Online'}</div>
                                         </div>
                                     </div>
                                 </Link>
