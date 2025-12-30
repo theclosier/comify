@@ -152,7 +152,7 @@ export default function PublicEventDetailPage({ params }: { params: Promise<{ su
                         <div>
                             <div className="flex gap-3 mb-4">
                                 <span className="px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-bold uppercase tracking-wider border border-teal-100">
-                                    {event.category || 'Etkinlik'}
+                                    Etkinlik
                                 </span>
                                 <span className="px-3 py-1 rounded-full bg-stone-100 text-stone-600 text-xs font-bold uppercase tracking-wider border border-stone-200">
                                     {event.platform}
