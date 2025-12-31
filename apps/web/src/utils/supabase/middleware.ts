@@ -37,21 +37,21 @@ export async function updateSession(request: NextRequest) {
         data: { user },
     } = await supabase.auth.getUser()
 
-    if (
-        !user &&
-        !request.nextUrl.pathname.startsWith('/login') &&
-        !request.nextUrl.pathname.startsWith('/auth') &&
-        !request.nextUrl.pathname.startsWith('/c/') && // Public community pages
-        !request.nextUrl.pathname.startsWith('/register') &&
-        request.nextUrl.pathname !== '/'
-    ) {
-        // no user, potentially redirect to login
-        // However, given our complex public/private route structure handled in Shell.tsx via client-side,
-        // we might want to keep middleware simple for now or strictly protect /yntm/dashboard
+    // PROTECTED ROUTE: /yntm (Admin Panel)
+    if (request.nextUrl.pathname.startsWith('/yntm')) {
+        const isLoginPage = request.nextUrl.pathname.startsWith('/yntm/login');
 
-        if (request.nextUrl.pathname.startsWith('/yntm') && !request.nextUrl.pathname.startsWith('/yntm/login')) {
+        // If trying to access protected admin pages without user -> Redirect to Login
+        if (!user && !isLoginPage) {
             const url = request.nextUrl.clone()
             url.pathname = '/yntm/login'
+            return NextResponse.redirect(url)
+        }
+
+        // If user is already logged in and tries to access login page -> Redirect to Dashboard
+        if (user && isLoginPage) {
+            const url = request.nextUrl.clone()
+            url.pathname = '/yntm/dashboard'
             return NextResponse.redirect(url)
         }
     }

@@ -46,25 +46,41 @@ export default function LandingPage() {
                 {isMenuOpen && (
                     <div className="fixed inset-0 z-[100] bg-white flex flex-col pointer-events-auto md:hidden">
                         <div className="h-20 flex items-center justify-between px-6 border-b border-indigo-50">
-                            <span className="font-bold text-xl tracking-tight text-text-main">COMINFY</span>
+                            <Link href="/" onClick={() => setIsMenuOpen(false)} className="font-bold text-xl tracking-tight text-slate-900">
+                                COMINFY
+                            </Link>
                             <button
                                 onClick={() => setIsMenuOpen(false)}
-                                className="p-2 -mr-2 text-text-main hover:bg-slate-50 rounded-lg transition-colors"
+                                className="p-2 -mr-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors"
                             >
                                 <X className="w-6 h-6" />
                             </button>
                         </div>
-                        <div className="flex-1 flex flex-col p-8 gap-8 font-medium text-lg text-text-main overflow-y-auto">
-                            <a href="#features" onClick={() => setIsMenuOpen(false)}>Özellikler</a>
-                            <a href="#solutions" onClick={() => setIsMenuOpen(false)}>Çözümler</a>
-                            <a href="#pricing" onClick={() => setIsMenuOpen(false)}>Fiyatlandırma</a>
+                        <div className="flex-1 flex flex-col p-8 gap-6 overflow-y-auto">
+                            <nav className="flex flex-col gap-6 text-lg font-medium text-slate-900">
+                                <a href="#features" onClick={() => setIsMenuOpen(false)} className="hover:text-indigo-600 transition-colors">Özellikler</a>
+                                <a href="#solutions" onClick={() => setIsMenuOpen(false)} className="hover:text-indigo-600 transition-colors">Çözümler</a>
+                                <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="hover:text-indigo-600 transition-colors">Fiyatlandırma</a>
+                            </nav>
 
-                            <hr className="border-indigo-50" />
+                            <hr className="border-indigo-50 my-2" />
 
-                            <Link href="/yntm/login" onClick={() => setIsMenuOpen(false)}>Giriş Yap</Link>
-                            <Link href="/register" onClick={() => setIsMenuOpen(false)} className="btn-primary justify-center shadow-lg shadow-indigo-200">
-                                Şimdi Kayıt Ol
-                            </Link>
+                            <div className="flex flex-col gap-4">
+                                <Link
+                                    href="/yntm/login"
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="w-full py-3 text-center rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition-colors"
+                                >
+                                    Giriş Yap
+                                </Link>
+                                <Link
+                                    href="/register"
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="btn-primary w-full justify-center py-3 text-white shadow-lg shadow-indigo-200"
+                                >
+                                    Şimdi Kayıt Ol
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 )}
