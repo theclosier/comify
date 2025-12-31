@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Globe, Layers, Zap, Check, Star, Users, PieChart, Shield, Layout, Twitter, Linkedin, Instagram, Calendar, Menu, X } from "lucide-react";
 
 export default function LandingPage() {
+    // Force deploy trigger: v2
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <div className="min-h-screen bg-background font-sans">
