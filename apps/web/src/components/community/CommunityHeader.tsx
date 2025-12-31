@@ -48,8 +48,8 @@ export default function CommunityHeader({ community }: CommunityHeaderProps) {
     }, []);
 
     return (
-        <header className="fixed top-6 left-0 right-0 z-50 px-4 md:px-8 pointer-events-none">
-            <div className="max-w-7xl mx-auto pointer-events-auto">
+        <header className="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
+            <div className="max-w-7xl mx-auto">
                 <div className="porcelain-glass rounded-2xl px-6 py-3 flex items-center justify-between shadow-warm transition-all duration-300 hover:shadow-lg backdrop-blur-xl border border-white/40">
 
                     {/* Left: Community Brand */}

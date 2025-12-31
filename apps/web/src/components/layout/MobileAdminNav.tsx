@@ -18,7 +18,7 @@ export default function MobileAdminNav() {
     return (
         <>
             {/* Mobile Header / Hamburger Trigger */}
-            <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-cream-100/80 backdrop-blur-md border-b border-white z-30 px-4 flex items-center justify-between">
+            <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-cream-100/80 backdrop-blur-md border-b border-white z-[60] px-4 flex items-center justify-between">
                 <button
                     onClick={() => setIsOpen(true)}
                     className="p-2 -ml-2 text-obsidian hover:bg-black/5 rounded-lg transition-colors"
