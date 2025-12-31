@@ -10,22 +10,22 @@ export default function LandingPage() {
     return (
         <div className="min-h-screen bg-background font-sans">
             {/* Header */}
-            {/* Header - Standard Sticky */}
-            <nav className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-indigo-50 transition-all">
-                <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+            {/* Header - Floating Dock Style */}
+            <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-7xl px-4 md:px-6">
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl border border-indigo-100 shadow-lg shadow-indigo-100/50 h-16 flex items-center justify-between px-6 transition-all">
                     <Link href="/" className="flex items-center gap-2">
-                        <span className="font-bold text-xl tracking-tight text-slate-900">COMINFY</span>
+                        <span className="font-bold text-xl tracking-tight text-text-main">COMINFY</span>
                     </Link>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-8">
-                        <div className="flex gap-8 text-sm font-medium text-slate-600">
+                        <div className="flex gap-8 text-sm font-medium text-text-muted">
                             <a href="#features" className="hover:text-indigo-600 transition-colors">Özellikler</a>
                             <a href="#solutions" className="hover:text-indigo-600 transition-colors">Çözümler</a>
                             <a href="#pricing" className="hover:text-indigo-600 transition-colors">Fiyatlandırma</a>
                         </div>
                         <div className="flex items-center gap-4">
-                            <Link href="/yntm/login" className="text-sm font-semibold text-slate-900 hover:text-indigo-600 transition-colors">
+                            <Link href="/yntm/login" className="text-sm font-semibold text-text-main hover:text-indigo-600 transition-colors">
                                 Giriş Yap
                             </Link>
                             <Link href="/register" className="btn-primary py-2 px-5 h-9 text-sm shadow-indigo-200">
@@ -36,7 +36,7 @@ export default function LandingPage() {
 
                     {/* Mobile Menu Trigger */}
                     <button
-                        className="md:hidden p-2 text-slate-900 hover:bg-slate-100 rounded-lg transition-colors relative z-[60] cursor-pointer"
+                        className="md:hidden p-2 text-text-main hover:bg-slate-100 rounded-lg transition-colors relative z-[60] cursor-pointer"
                         onClick={() => setIsMenuOpen(true)}
                     >
                         <Menu className="w-6 h-6" />
