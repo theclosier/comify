@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Globe, Layers, Zap, Check, Star, Users, PieChart, Shield, Layout, Twitter, Linkedin, Instagram, Calendar } from "lucide-react";
+import { ArrowRight, Globe, Layers, Zap, Check, Star, Users, PieChart, Shield, Layout, Twitter, Linkedin, Instagram, Calendar, Menu, X } from "lucide-react";
 
 export default function LandingPage() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <div className="min-h-screen bg-background font-sans">
             {/* Header */}
@@ -14,6 +16,7 @@ export default function LandingPage() {
                         <span className="font-bold text-xl tracking-tight text-text-main">COMINFY</span>
                     </div>
 
+                    {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-8">
                         <div className="flex gap-8 text-sm font-medium text-text-muted">
                             <a href="#features" className="hover:text-indigo-600 transition-colors">Özellikler</a>
@@ -29,7 +32,42 @@ export default function LandingPage() {
                             </Link>
                         </div>
                     </div>
+
+                    {/* Mobile Menu Trigger */}
+                    <button
+                        className="md:hidden p-2 text-text-main hover:bg-slate-100 rounded-lg transition-colors"
+                        onClick={() => setIsMenuOpen(true)}
+                    >
+                        <Menu className="w-6 h-6" />
+                    </button>
                 </div>
+
+                {/* Mobile Menu Overlay */}
+                {isMenuOpen && (
+                    <div className="fixed inset-0 z-[60] bg-white flex flex-col pointer-events-auto md:hidden animate-in slide-in-from-top duration-300">
+                        <div className="h-20 flex items-center justify-between px-6 border-b border-indigo-50">
+                            <span className="font-bold text-xl tracking-tight text-text-main">COMINFY</span>
+                            <button
+                                onClick={() => setIsMenuOpen(false)}
+                                className="p-2 -mr-2 text-text-main hover:bg-slate-50 rounded-lg transition-colors"
+                            >
+                                <X className="w-6 h-6" />
+                            </button>
+                        </div>
+                        <div className="flex-1 flex flex-col p-8 gap-8 font-medium text-lg text-text-main overflow-y-auto">
+                            <a href="#features" onClick={() => setIsMenuOpen(false)}>Özellikler</a>
+                            <a href="#solutions" onClick={() => setIsMenuOpen(false)}>Çözümler</a>
+                            <a href="#pricing" onClick={() => setIsMenuOpen(false)}>Fiyatlandırma</a>
+
+                            <hr className="border-indigo-50" />
+
+                            <Link href="/yntm/login" onClick={() => setIsMenuOpen(false)}>Giriş Yap</Link>
+                            <Link href="/register" onClick={() => setIsMenuOpen(false)} className="btn-primary justify-center shadow-lg shadow-indigo-200">
+                                Şimdi Kayıt Ol
+                            </Link>
+                        </div>
+                    </div>
+                )}
             </nav>
 
             {/* Hero Section */}
