@@ -49,23 +49,24 @@ export default function DashboardView({ stats, recentEvents, pendingMembersList:
         <div className="min-h-screen bg-cream-100 pb-12 pt-8 px-8">
             <div className="max-w-7xl mx-auto space-y-10">
                 {/* Header */}
-                <div className="flex justify-between items-end">
-                    <div>
-                        <h2 className="text-taupe font-bold uppercase tracking-widest text-xs mb-2">Hoş Geldin, Yönetici 👋</h2>
-                        <h1 className="text-3xl md:text-4xl font-serif text-obsidian tracking-tight">Genel Bakış</h1>
+                {/* Header */}
+                <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-5 md:gap-0">
+                    <div className="contents md:block">
+                        <h2 className="text-taupe font-bold uppercase tracking-widest text-[10px] md:text-xs mb-1 md:mb-2 order-1">Hoş Geldin, Yönetici 👋</h2>
+                        <h1 className="text-2xl md:text-4xl font-serif text-obsidian tracking-tight order-3 md:order-none">Genel Bakış</h1>
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 order-2 md:order-none w-full md:w-auto">
                         <Link
                             href="/c/yazilimcilar"
                             target="_blank"
-                            className="bg-white hover:bg-cream-50 text-charcoal border border-sandstone px-5 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 shadow-sm hover:shadow"
+                            className="bg-white hover:bg-cream-50 text-charcoal border border-sandstone px-4 md:px-5 py-3 rounded-xl font-bold text-xs md:text-sm transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow flex-1 md:flex-none"
                         >
                             <Globe className="w-4 h-4" />
                             Topluluk Sayfası
                         </Link>
                         <Link
                             href="/yntm/events/new"
-                            className="btn-primary shadow-xl"
+                            className="btn-primary shadow-xl flex-1 md:flex-none justify-center"
                         >
                             <Plus className="w-5 h-5" />
                             Yeni Etkinlik

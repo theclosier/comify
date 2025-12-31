@@ -40,7 +40,7 @@ export function StatsCard({ title, value, icon: Icon, trend, trendUp, color = 'b
             </div>
             <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-taupe mb-1">{title}</p>
-                <h3 className="text-3xl font-serif text-obsidian tracking-tight">{value}</h3>
+                <h3 className="text-2xl font-serif text-obsidian tracking-tight">{value}</h3>
             </div>
         </div>
     );
