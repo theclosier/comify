@@ -45,39 +45,47 @@ export default function LandingPage() {
 
                 {/* Mobile Menu Overlay */}
                 {isMenuOpen && (
-                    <div className="fixed inset-0 z-[100] bg-white flex flex-col pointer-events-auto md:hidden">
-                        <div className="h-20 flex items-center justify-between px-6 border-b border-indigo-50">
-                            <Link href="/" onClick={() => setIsMenuOpen(false)} className="font-bold text-xl tracking-tight text-slate-900">
+                    <div className="fixed inset-0 z-[100] bg-white flex flex-col pointer-events-auto md:hidden overflow-hidden">
+                        {/* Menu Header */}
+                        <div className="flex items-center justify-between px-6 py-6 border-b border-indigo-50">
+                            <Link href="/" onClick={() => setIsMenuOpen(false)} className="font-bold text-2xl tracking-tight text-slate-900">
                                 COMINFY
                             </Link>
                             <button
                                 onClick={() => setIsMenuOpen(false)}
-                                className="p-2 -mr-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors"
+                                className="p-2 -mr-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors"
                             >
-                                <X className="w-6 h-6" />
+                                <X className="w-8 h-8" />
                             </button>
                         </div>
+
+                        {/* Menu Body */}
                         <div className="flex-1 flex flex-col p-8 gap-6 overflow-y-auto">
-                            <nav className="flex flex-col gap-6 text-lg font-medium text-slate-900">
-                                <a href="#features" onClick={() => setIsMenuOpen(false)} className="hover:text-indigo-600 transition-colors">Özellikler</a>
-                                <a href="#solutions" onClick={() => setIsMenuOpen(false)} className="hover:text-indigo-600 transition-colors">Çözümler</a>
-                                <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="hover:text-indigo-600 transition-colors">Fiyatlandırma</a>
+                            <nav className="flex flex-col gap-6">
+                                <a href="#features" onClick={() => setIsMenuOpen(false)} className="text-2xl font-medium text-slate-900 hover:text-indigo-600 transition-colors">
+                                    Özellikler
+                                </a>
+                                <a href="#solutions" onClick={() => setIsMenuOpen(false)} className="text-2xl font-medium text-slate-900 hover:text-indigo-600 transition-colors">
+                                    Çözümler
+                                </a>
+                                <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="text-2xl font-medium text-slate-900 hover:text-indigo-600 transition-colors">
+                                    Fiyatlandırma
+                                </a>
                             </nav>
 
-                            <hr className="border-indigo-50 my-2" />
-
-                            <div className="flex flex-col gap-4">
+                            {/* Menu Footer / Actions */}
+                            <div className="mt-auto pt-8 border-t border-indigo-50 flex flex-col gap-4">
                                 <Link
                                     href="/yntm/login"
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="w-full py-3 text-center rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition-colors"
+                                    className="w-full py-4 text-center rounded-xl font-bold text-lg text-slate-700 hover:bg-slate-50 transition-colors border border-slate-200"
                                 >
                                     Giriş Yap
                                 </Link>
                                 <Link
                                     href="/register"
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="btn-primary w-full justify-center py-3 text-white shadow-lg shadow-indigo-200"
+                                    className="btn-primary w-full justify-center py-4 text-lg text-white shadow-xl shadow-indigo-200 font-bold"
                                 >
                                     Şimdi Kayıt Ol
                                 </Link>
