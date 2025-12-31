@@ -26,7 +26,7 @@ export default function RegisterPage() {
 
             <div className="w-full max-w-lg space-y-8 animate-in slide-up duration-700">
                 <div className="text-center">
-                    <div className="font-extrabold text-2xl tracking-tight text-text-main mb-6">COMINFY</div>
+                    <div className="font-extrabold text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-6">COMINFY</div>
                     <h1 className="text-3xl font-bold text-text-main tracking-tight">Hesabınızı oluşturun</h1>
                     <p className="text-text-muted mt-2">Topluluğunuzu yönetmeye hemen başlayın.</p>
                 </div>

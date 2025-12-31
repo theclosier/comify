@@ -33,7 +33,7 @@ export default function LoginPage() {
                 {/* Brand */}
                 <div className="text-center">
                     {/* Text Only Logo */}
-                    <div className="font-extrabold text-2xl tracking-tight text-text-main mb-6">COMINFY</div>
+                    <div className="font-extrabold text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-6">COMINFY</div>
                     <h1 className="text-3xl font-bold text-text-main tracking-tight">Tekrar Hoşgeldiniz</h1>
                     <p className="text-text-muted mt-2">Kürasyon panelinize giriş yapın.</p>
                 </div>

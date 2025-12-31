@@ -14,7 +14,7 @@ export default function LandingPage() {
             <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-7xl px-4 md:px-6">
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl border border-indigo-100 shadow-lg shadow-indigo-100/50 h-16 flex items-center justify-between px-6 transition-all">
                     <Link href="/" className="flex items-center gap-2">
-                        <span className="font-bold text-xl tracking-tight text-text-main">COMINFY</span>
+                        <span className="font-bold text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">COMINFY</span>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -48,7 +48,7 @@ export default function LandingPage() {
                     <div className="fixed inset-0 z-[100] bg-white flex flex-col h-[100dvh] overflow-hidden overscroll-contain">
                         {/* Menu Header */}
                         <div className="flex items-center justify-between px-6 py-4 border-b border-indigo-50 shrink-0">
-                            <Link href="/" onClick={() => setIsMenuOpen(false)} className="font-bold text-xl tracking-tight text-slate-900">
+                            <Link href="/" onClick={() => setIsMenuOpen(false)} className="font-bold text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
                                 COMINFY
                             </Link>
                             <button
@@ -389,7 +389,7 @@ export default function LandingPage() {
                         <div className="col-span-2 space-y-6">
                             <div className="flex items-center gap-2">
                                 {/* Logo Emblem Removed */}
-                                <span className="font-bold text-xl tracking-tight text-text-main">COMINFY</span>
+                                <span className="font-bold text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">COMINFY</span>
                             </div>
                             <p className="text-text-muted leading-relaxed pr-6">
                                 Modern topluluklar için işletim sistemi. Etkinlikleri, üyeleri ve analizleri tek bir yerden yönetmenize yardımcı oluyoruz.

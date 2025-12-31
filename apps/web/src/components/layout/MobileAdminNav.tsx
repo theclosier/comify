@@ -25,7 +25,7 @@ export default function MobileAdminNav() {
                 >
                     <Menu className="w-6 h-6" />
                 </button>
-                <Link href="/yntm/dashboard" className="font-serif font-bold text-lg text-obsidian">COMINFY</Link>
+                <Link href="/yntm/dashboard" className="font-serif font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">COMINFY</Link>
                 <div className="w-8"></div> {/* Spacer for center alignment */}
             </div>
 

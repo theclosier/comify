@@ -52,7 +52,7 @@ export default function AdminLoginPage() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wide mb-4 border border-indigo-100">
                         <ShieldCheck className="w-4 h-4" /> Yönetici Paneli
                     </div>
-                    <div className="font-extrabold text-2xl tracking-tight text-stone-900 mb-2">COMINFY</div>
+                    <div className="font-extrabold text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-2">COMINFY</div>
                     <p className="text-stone-500">Topluluğunuzu yönetmek için giriş yapın.</p>
                 </div>
 
