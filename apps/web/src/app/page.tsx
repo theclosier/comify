@@ -104,8 +104,8 @@ export default function LandingPage() {
                     </div>
 
                     <h1 className="text-6xl md:text-7xl font-extrabold text-text-main tracking-tight leading-[1.05]">
-                        Modern Topluluklar İçin <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Tek İşletim Sistemi.</span>
+                        Keyifli Topluluklar İçin,<br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Topluluk Yönetim Sistemi.</span>
                     </h1>
 
                     <p className="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed">
